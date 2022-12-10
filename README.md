@@ -1,9 +1,13 @@
 # StudioPresence
 A plugin to connect your Studio with Discord!
+Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405)
 
 # Examples
-![image](https://user-images.githubusercontent.com/77511250/206877526-e65b6755-5421-4354-9780-c2b786d1f2e1.png)
-![image](https://user-images.githubusercontent.com/77511250/206877533-4dc017d1-94fa-4ef6-950a-6cc69a40fd1d.png)
-![image](https://user-images.githubusercontent.com/77511250/206877543-ee18f473-3bba-4e67-95e7-5c51afd1cc4b.png)
+![image](https://user-images.githubusercontent.com/77511250/206878575-bb916317-6909-4053-b9a0-723aa496337f.png)
 
 # Installation
+
+• Download (server here)[https://github.com/iArxic/StudioPresence/releases/tag/v1] and (roblox plugin here)[https://www.roblox.com/library/11213975679/StudioPresence]
+  · Since the script uses Node, you need to (install it)[https://nodejs.org/en/download/]
+• Next, extract the already installed (Server)[https://github.com/iArxic/StudioPresence/releases/tag/v1] and extract the files from the zip.
+• Press the runner.bat that will execute the server 
