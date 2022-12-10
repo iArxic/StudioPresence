@@ -1,2 +1,9 @@
 @echo off
-node "C:\Users\kubav\Desktop\DRPC_server/index.js"
+if not exist %cd%\node_modules (
+  echo StudioPresence - Installing Required Packages
+  call npm i discord-rpc
+cls
+echo Required packages installed!
+)
+Title StudioPresence
+node %cd%\index.js
