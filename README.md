@@ -7,7 +7,7 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Installation
 
-• Download[(server here](https://github.com/iArxic/StudioPresence/releases/tag/v1) and [roblox plugin here](https://www.roblox.com/library/11213975679/StudioPresence)
-  · Since the script uses Node, you need to [install it](https://nodejs.org/en/download/)
-• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v1) and extract the files from the zip.
-• Press the runner.bat that will execute the server 
+• Download [server here](https://github.com/iArxic/StudioPresence/releases/tag/v1) and [roblox plugin here](https://www.roblox.com/library/11213975679/StudioPresence)\n
+  · Since the script uses Node, you need to [install it](https://nodejs.org/en/download/)\n
+• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v1) and extract the files from the zip.\n
+• Press the runner.bat that will execute the server \n
