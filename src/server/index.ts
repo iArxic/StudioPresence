@@ -60,8 +60,7 @@ async function main() {
           res.end("SET Activity");
         } catch (err: any) {
           try {
-            drpcClient.destroy()
-            process.exit(1)
+            drpcClient.destroy();
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
