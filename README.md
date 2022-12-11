@@ -12,9 +12,9 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 • Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v1) to a new folder (Inside desktop recommended).    
 • Run the **runner.bat**
     
-Note: The cmd window needs to be open in order for the plugin to work!
+*Note: The cmd window needs to be open in order for the plugin to work!*
 
-If you have any issues, contact me via my [twitter](https://twitter.com/iArxic)!
+**If you have any issues, contact me via my [twitter](https://twitter.com/iArxic)!**
 
 # Some Installation Issues you might encounter:
 The runner.bat immediately closes after running?    
