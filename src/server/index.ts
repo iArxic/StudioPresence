@@ -62,6 +62,7 @@ async function main() {
         } catch (err: any) {
           try {
             drpcClient.destroy();
+            console.log("Stopping activity.")
             main()
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
