@@ -52,14 +52,18 @@ async function main() {
             largeImageKey: data.assets.large_image,
           });
 
-          if (data.updateType == "CLOSE") {
+          if (data.updateType === "CLOSE") {
             drpcClient.destroy();
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
-          console.log("Failed to set activity: " + err.message);
+          try {
+            drpcClient.setActivity({});
+          } catch (err: any) {
+            console.log("Failed to clear activity: " + err.message);
+          }
         }
       });
     })
