@@ -1,0 +1,7 @@
+{
+  "name": "StudioPresence",
+  "tree": {
+    "$className": "Folder",
+    "$path": "src/client"
+  }
+}
