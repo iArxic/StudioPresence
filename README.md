@@ -1,6 +1,6 @@
 # StudioPresence
 
-A plugin to connect your Studio with Discord!
+A plugin to connect your Studio with Discord!   
 Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405)
 
 # Examples
@@ -9,18 +9,15 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Installation
 
-• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v1) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)
-• Since the script uses Node, you need to [Install It](https://nodejs.org/en/download/)
-• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v1) to a new folder (Inside desktop recommended).
-• Run the **runner.bat**
+• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v2) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)    
+• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v2) to a new folder (Inside desktop recommended).    
+• Run it!
 
 _Note: The cmd window needs to be open in order for the plugin to work!_
 
 **If you have any issues, contact me via my [twitter](https://twitter.com/iArxic)!**
 
-# Some Installation Issues you might encounter:
-
-The runner.bat immediately closes after running?
-
-1.  Try to run it as administrator
-2.  If the issue persists, try deleting package-lock and running it again, if the installed packages havent been installed into the folder (usually in downloads) move everything to the folder!
+# Special thanks to   
+[Coyenn](https://github.com/Coyenn) - Created V2    
+[Rigid Studios](https://devforum.roblox.com/u/Rigid_Studios) - Original DRPC    
+[Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified)
