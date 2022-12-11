@@ -53,7 +53,8 @@ async function main() {
           });
 
           if (data.updateType === "CLOSE") {
-            drpcClient.destroy();
+            drpcClient.destroy()
+            main()
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
@@ -61,6 +62,7 @@ async function main() {
         } catch (err: any) {
           try {
             drpcClient.destroy();
+            main()
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
