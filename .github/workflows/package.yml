@@ -36,5 +36,5 @@ jobs:
       - run: pnpm install && pnpm build:client
       - uses: actions/upload-artifact@v2
         with:
-          name: Roblox-DRPC.rbxm
+          name: Roblox-DRPC-Plugin
           path: dist/client/roblox-drpc.rbxm
