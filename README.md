@@ -11,7 +11,7 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 • Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v2) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)    
 • Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v2) to a new folder (Inside desktop recommended).    
-• Run it!
+• Run it! *(If you're using **MacOS**, you must run it through the terminal, move to the location of the binary and execute `./roblox-drpc.macos`)*
 
 _Note: The cmd window needs to be open in order for the plugin to work!_
 
