@@ -26,7 +26,6 @@ async function login(drpcClient: drpc.Client) {
 
 async function main() {
   const drpcClient = new drpc.Client({ transport: "ipc" });
-  let lastStudioEdit = Date.now();
 
   login(drpcClient);
 
@@ -39,7 +38,6 @@ async function main() {
       });
 
       req.on("end", () => {
-        lastStudioEdit = Date.now();
 
         try {
           data = JSON.parse(data).activity;
@@ -55,7 +53,6 @@ async function main() {
 
           if (data.updateType === "CLOSE") {
             drpcClient.destroy()
-            setTimeout(main,10000)
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
