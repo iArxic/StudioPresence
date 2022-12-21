@@ -17,7 +17,6 @@ async function login(drpcClient: drpc.Client) {
   } finally {
     if (!user) {
       console.log(chalk.red("DRPC failed to start (Is Discord open?)"));
-
       process.exit(1);
     } else {
       console.log(chalk.green("DRPC started"));
