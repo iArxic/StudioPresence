@@ -54,8 +54,8 @@ async function main() {
           });
 
           if (data.updateType === "CLOSE") {
+            drpcClient.setActivity({null})
             main()
-            drpcClient.destroy()
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
