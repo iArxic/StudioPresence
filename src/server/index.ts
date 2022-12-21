@@ -54,14 +54,14 @@ async function main() {
           });
 
           if (data.updateType === "CLOSE") {
-            drpcClient.setActivity({activity: null})
+            drpcClient.setActivity({NaN})
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
           try {
-            drpcClient.setActivity({activity: null})
+            drpcClient.setActivity({NaN})
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
