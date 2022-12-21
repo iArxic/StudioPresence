@@ -50,19 +50,21 @@ async function main() {
             state: data.state,
             largeImageText: data.assets.large_text,
             largeImageKey: data.assets.large_image,
+            smallImageText: data.assets.small_text,
+            smallImageKey: data.assets.small_key
           });
 
           if (data.updateType === "CLOSE") {
-            drpcClient.destroy()
             main()
+            drpcClient.destroy()
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
           try {
-            drpcClient.destroy();
             main()
+            drpcClient.destroy();
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
