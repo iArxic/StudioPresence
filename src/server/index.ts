@@ -62,8 +62,6 @@ async function main() {
           res.end("SET Activity");
         } catch (err: any) {
           try {
-            drpcClient.destroy()
-            setTimeout(main,10000)
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
