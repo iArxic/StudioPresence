@@ -16,7 +16,7 @@ specifiers:
 dependencies:
   '@types/node': 18.11.13
   chalk: 5.2.0
-  discord-rpc: 3.2.0
+  discord-rpc: 4.0.1
   got: 11.8.6
   http: 0.0.1-security
   node-gyp: 7.1.2
