@@ -60,6 +60,7 @@ async function main() {
           res.end("SET Activity");
         } catch (err: any) {
           try {
+            console.log(err.message)
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
