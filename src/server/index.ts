@@ -47,6 +47,8 @@ async function main() {
             state: data.state,
             largeImageText: data.assets.large_text,
             largeImageKey: data.assets.large_image,
+            smallImageText: data.assest._small_text,
+            smallImageKey: data.assets.small_image
           });
 
           if (data.updateType === "CLOSE") {
