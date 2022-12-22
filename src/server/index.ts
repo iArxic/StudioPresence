@@ -54,7 +54,7 @@ async function main() {
           if (data.updateType === "CLOSE") {
             drpcClient.clearActivity()
           }
-
+ 
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
