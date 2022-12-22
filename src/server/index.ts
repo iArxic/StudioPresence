@@ -17,6 +17,7 @@ async function login(drpcClient: drpc.Client) {
   } finally {
     if (!user) {
       console.log(chalk.red("DRPC failed to start (Is Discord open?)"));
+
       process.exit(1);
     } else {
       console.log(chalk.green("DRPC started"));
@@ -38,7 +39,6 @@ async function main() {
       });
 
       req.on("end", () => {
-
         try {
           data = JSON.parse(data).activity;
           drpcClient.setActivity({
@@ -47,12 +47,11 @@ async function main() {
             state: data.state,
             largeImageText: data.assets.large_text,
             largeImageKey: data.assets.large_image,
-            smallImageText: data.assets.small_text,
-            smallImageKey: data.assets.small_key
           });
 
           if (data.updateType === "CLOSE") {
             drpcClient.destroy()
+            main()
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
