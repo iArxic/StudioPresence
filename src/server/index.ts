@@ -17,8 +17,6 @@ async function login(drpcClient: drpc.Client) {
   } finally {
     if (!user) {
       console.log(chalk.red("DRPC failed to start (Is Discord open?)"));
-
-      process.exit(1);
     } else {
       console.log(chalk.green("DRPC started"));
     }
@@ -27,7 +25,7 @@ async function login(drpcClient: drpc.Client) {
 
 async function main() {
   const drpcClient = new drpc.Client({ transport: "ipc" });
-
+  let lastTesting = 0
   login(drpcClient);
 
   http
@@ -40,7 +38,16 @@ async function main() {
 
       req.on("end", () => {
         try {
+          let passThrough = true
           data = JSON.parse(data).activity;
+          if (!data) {drpcClient.clearActivity()}else{
+          if (data.details=="Currently testing"){
+            lastTesting=Date.now()
+          }else if((Date.now()-lastTesting)<3000) {
+            // i wish i could just use a return here
+            passThrough=false
+          }
+          if (passThrough==true){
           drpcClient.setActivity({
             details: data.details,
             startTimestamp: data.timestamps.start,
@@ -52,14 +59,16 @@ async function main() {
           });
 
           if (data.updateType === "CLOSE") {
-            //drpcClient.destroy()
+            drpcClient.clearActivity()
           }
  
+        }}
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
+          console.log(err)
+          drpcClient.clearActivity() 
           try {
-            console.log(err.message)
           } catch (err: any) {
             console.log("Failed to clear activity: " + err.message);
           }
