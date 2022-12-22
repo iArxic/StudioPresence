@@ -52,7 +52,7 @@ async function main() {
           });
 
           if (data.updateType === "CLOSE") {
-            drpcClient.destroy()
+            //drpcClient.destroy()
           }
  
           res.writeHead(200, { "Content-Type": "text/plain" });
