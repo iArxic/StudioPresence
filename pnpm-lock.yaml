@@ -443,7 +443,7 @@ packages:
       path-type: 4.0.0
     dev: true
 
-  /discord-rpc/3.2.0:
+  /discord-rpc/4.0.1:
     resolution: {integrity: sha512-KJv0EVbGMlr04HoG6f5b3wD7X9kSHzQ2Ed2qfHSDvYJ1MkE8RbCQmMcQQrSvAxpfsqZgUjB/bsfi/mjyicCH+A==}
     peerDependencies:
       register-scheme: github:devsnek/node-register-scheme
@@ -1273,7 +1273,7 @@ packages:
     hasBin: true
     dependencies:
       chalk: 4.1.2
-      discord-rpc: 3.2.0
+      discord-rpc: 4.0.1
       prompt-sync: 4.2.0
     transitivePeerDependencies:
       - bufferutil
