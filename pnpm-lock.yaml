@@ -5,7 +5,7 @@ specifiers:
   '@types/node': ^18.11.13
   '@vercel/ncc': ^0.36.0
   chalk: ^5.2.0
-  discord-rpc: ^3.2.0
+  discord-rpc: ^4.0.1
   got: ^11.8.2
   http: 0.0.1-security
   node-gyp: ^7.1.2
