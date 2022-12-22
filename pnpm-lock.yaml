@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/discord-rpc': ^4.0.3
+  '@types/discord-rpc': ^4.0.1
   '@types/node': ^18.11.13
   '@vercel/ncc': ^0.36.0
   chalk: ^5.2.0
@@ -24,7 +24,7 @@ dependencies:
   typescript: 4.9.4
 
 devDependencies:
-  '@types/discord-rpc': 4.0.3
+  '@types/discord-rpc': 4.0.1
   '@vercel/ncc': 0.36.0
   pkg: 5.8.0
 
@@ -132,7 +132,7 @@ packages:
       '@types/responselike': 1.0.0
     dev: false
 
-  /@types/discord-rpc/4.0.3:
+  /@types/discord-rpc/4.0.1:
     resolution: {integrity: sha512-4Kh+8u1+OXRHD5OHET3zbBInDkx3cMLaj8Qif8JQbgHZjiru2IYf/WHhuYdzjgtJ/J0CuImOpvt98+Bhe/lr1g==}
     dev: true
 
