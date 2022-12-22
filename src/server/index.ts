@@ -47,13 +47,12 @@ async function main() {
             state: data.state,
             largeImageText: data.assets.large_text,
             largeImageKey: data.assets.large_image,
-            smallImageText: data.assest.small_text,
+            smallImageText: data.assets.small_text,
             smallImageKey: data.assets.small_image
           });
 
           if (data.updateType === "CLOSE") {
-            drpcClient.destroy()
-            main()
+            drpcClient.clear()
           }
 
           res.writeHead(200, { "Content-Type": "text/plain" });
