@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: StudioPresence-linux
+          name: StudioPresence-Linux
           path: release/studiopresence-linux*
 
   client:
@@ -51,6 +51,8 @@ jobs:
       - uses: Roblox/setup-foreman@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: mkdir release
 
       - run: pnpm install --frozen-lockfile
 
