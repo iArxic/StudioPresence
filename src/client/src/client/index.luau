@@ -40,9 +40,8 @@ function client:login(cb)
 		success = false
 	end
 
-	spawn(function()
-		while 1 do
-			wait(2.6) -- Accuracy un-necessary.
+	task.spawn(function()
+		repeat
 
 			if self.Enabled then
 				self:SetActivity()
@@ -51,7 +50,9 @@ function client:login(cb)
 			if self.Terminated then
 				break
 			end
-		end
+
+			task.wait(2.6)
+		until false
 	end)
 
 	if cb then

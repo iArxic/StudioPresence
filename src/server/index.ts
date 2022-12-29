@@ -1,32 +1,36 @@
-import drpc from "discord-rpc";
+import { Client, type User } from "discord-rpc";
+import http from "node:http";
 import chalk from "chalk";
-import http from "http";
 
 const SERVER_PORT = 4455;
 const CLIENT_ID = "1028311936854675458";
 
-async function login(drpcClient: drpc.Client) {
-  let user: drpc.User | undefined;
+async function login(client: Client) {
+  let user: User | undefined;
 
   try {
     user = (
-      await drpcClient.login({
+      await client.login({
         clientId: CLIENT_ID,
       })
     ).user;
   } finally {
     if (!user) {
-      console.log(chalk.red("DRPC failed to start (Is Discord open?)"));
+      console.error(
+        chalk.red("StudioPresence failed to start (Is Discord open?)")
+      );
     } else {
-      console.log(chalk.green("DRPC started"));
+      console.log(chalk.green("StudioPresence started"));
     }
   }
 }
 
-async function main() {
-  const drpcClient = new drpc.Client({ transport: "ipc" });
-  let lastTesting = 0
-  login(drpcClient);
+(async () => {
+  const client = new Client({ transport: "ipc" });
+
+  let lastTesting = 0;
+
+  login(client);
 
   http
     .createServer((req, res) => {
@@ -38,44 +42,49 @@ async function main() {
 
       req.on("end", () => {
         try {
-          let passThrough = true
-          data = JSON.parse(data).activity;
-          if (!data) {drpcClient.clearActivity()}else{
-          if (data.details=="Currently testing"){
-            lastTesting=Date.now()
-          }else if((Date.now()-lastTesting)<3000) {
-            // i wish i could just use a return here
-            passThrough=false
-          }
-          if (passThrough==true){
-          drpcClient.setActivity({
-            details: data.details,
-            startTimestamp: data.timestamps.start,
-            state: data.state,
-            largeImageText: data.assets.large_text,
-            largeImageKey: data.assets.large_image,
-            smallImageText: data.assets.small_text,
-            smallImageKey: data.assets.small_image
-          });
+          let passThrough = true;
 
-          if (data.updateType === "CLOSE") {
-            drpcClient.clearActivity()
+          try {
+            data = JSON.parse(data).activity;
+          } catch (ignored) {
+            data = undefined;
           }
- 
-        }}
+
+          if (!data) {
+            client.clearActivity();
+          } else {
+            if (data.details === "Currently testing") {
+              lastTesting = Date.now();
+            } else if (Date.now() - lastTesting < 3000) {
+              // i wish i could just use a return here
+              passThrough = false;
+            }
+            if (passThrough) {
+              client.setActivity({
+                details: data.details,
+                startTimestamp: data.timestamps.start,
+                state: data.state,
+                largeImageText: data.assets.large_text,
+                largeImageKey: data.assets.large_image,
+                smallImageText: data.assets.small_text,
+                smallImageKey: data.assets.small_image,
+              });
+
+              if (data.updateType === "CLOSE")
+                client.clearActivity().catch(() => null);
+            }
+          }
+
           res.writeHead(200, { "Content-Type": "text/plain" });
           res.end("SET Activity");
         } catch (err: any) {
-          console.log(err)
-          drpcClient.clearActivity() 
-          try {
-          } catch (err: any) {
-            console.log("Failed to clear activity: " + err.message);
-          }
+          console.error(err);
+
+          client
+            .clearActivity()
+            .catch(() => console.error(chalk.red("Failed to clear activity")));
         }
       });
     })
     .listen(SERVER_PORT);
-}
-
-main();
+})();
