@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vim,git,macos,windows,yarn,pnpm
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,vim,git,macos,windows,yarn,pnpm
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vim,git,macos,windows,yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,vim,git,macos,windows,yarn
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -189,8 +189,6 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-#!! ERROR: pnpm is undefined. Use list command to see defined gitignore types !!#
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -274,6 +272,6 @@ $RECYCLE.BIN/
 # and uncomment the following lines
 .pnp.*
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vim,git,macos,windows,yarn,pnpm
+# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vim,git,macos,windows,yarn
 
 release/
