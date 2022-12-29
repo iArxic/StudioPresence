@@ -1,7 +1,6 @@
 name: Package
 
-on:
-  push:
+on: push
 
 jobs:
   server:
