@@ -1,40 +1,64 @@
-# Run pnpm install, build, and package
-# Then upload the artifacts
 name: Package
-on:
-  push:
-    branches:
-      - production
+
+on: push
+
 jobs:
-  package-server:
+  server:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install -g pnpm
-      - run: pnpm install && pnpm run build:server && pnpm run package:server
-      - uses: actions/upload-artifact@v2
+
+      - uses: pnpm/action-setup@v2
         with:
-          name: Roblox-DRPC-MacOS
-          path: dist/server/roblox-drpc-macos
-      - uses: actions/upload-artifact@v2
+          version: 7.19.0
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm run package:server
+
+      - uses: actions/upload-artifact@v3
         with:
-          name: Roblox-DRPC-Windows
-          path: dist/server/roblox-drpc-win.exe
-  package-client:
+          name: StudioPresence-Windows
+          path: release/studiopresence-win*.exe
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: StudioPresence-macOS
+          path: release/studiopresence-macos*
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: StudioPresence-Linux
+          path: release/studiopresence-linux*
+
+  client:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: ok-nick/setup-aftman@v0.3.0
-      - run: aftman install
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install -g pnpm
-      - run: pnpm install && pnpm build:client
-      - uses: actions/upload-artifact@v2
+
+      - uses: pnpm/action-setup@v2
         with:
-          name: Roblox-DRPC-Plugin
-          path: dist/client/roblox-drpc.rbxm
+          version: 7.19.0
+
+      - uses: Roblox/setup-foreman@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: mkdir release
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm build:client
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: StudioPresence-Plugin
+          path: release/studiopresence*.rbxm
