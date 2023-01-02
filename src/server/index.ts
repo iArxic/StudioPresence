@@ -53,7 +53,7 @@ async function login(client: Client) {
           if (!data) {
             client.clearActivity();
           } else {
-            if (data.details === "Currently testing") {
+            if (data.details === "Testing") {
               lastTesting = Date.now();
             } else if (Date.now() - lastTesting < 3000) {
               // i wish i could just use a return here
