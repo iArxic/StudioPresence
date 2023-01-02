@@ -10,10 +10,9 @@ local function start()
 	}
 
 	for i, v in ipairs(StudioPresence:GetDescendants()) do
-		if v:IsA("ModuleScript") then
-			local m = require(v)
-			setmetatable(m, { __index = env })
-		end
+		if not v:IsA("ModuleScript") then continue end
+		local m = require(v)
+		setmetatable(m, { __index = env })
 	end
 
 	local Data = require(StudioPresence.src.dataHandler)
@@ -39,13 +38,13 @@ local function start()
 		if success then
 			started = true
 		else
-			wait(3)
+			task.wait(3)
 			start()
 			ClientObj.Enabled = false
 		end
 	end)
 end
 
-if started == false then
+if not started then
 	start()
 end
