@@ -1,4 +1,4 @@
-# StudioPresence
+# StudioPresence v3.0.1
 
 A plugin to connect your Studio with Discord!  
 Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405)
@@ -9,9 +9,11 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Installation
 
-• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
-• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v3) to a new folder (Inside desktop recommended).  
+• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.1) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
+• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.1) to a new folder (Inside desktop recommended).  
 • Run it! _(If you're using **MacOS**, you must run it through the terminal, move to the location of the binary and execute `./roblox-drpc.macos`)_
+
+You might have an issue with the antivirus incorrectly flagging it as a virus, click "keep" and if needed exclude the file from your antivirus.
 
 _Note: The cmd window needs to be open in order for the plugin to work!_
 
@@ -19,6 +21,7 @@ _Note: The cmd window needs to be open in order for the plugin to work!_
 
 # Special thanks to
 
+[xhayper](https://github.com/xhayper) - Linux support + improvements
 [Coyenn](https://github.com/Coyenn) - Created V2  
 [Rigid Studios](https://devforum.roblox.com/u/Rigid_Studios) - Original DRPC  
 [Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified)
