@@ -21,7 +21,7 @@ _Note: The cmd window needs to be open in order for the plugin to work!_
 
 # Special thanks to
 
-[xhayper](https://github.com/xhayper) - Linux support + improvements
-[Coyenn](https://github.com/Coyenn) - Created V2  
+[xhayper](https://github.com/xhayper) - v3.0.1  
+[Coyenn](https://github.com/Coyenn) - v2  
 [Rigid Studios](https://devforum.roblox.com/u/Rigid_Studios) - Original DRPC  
 [Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified)
