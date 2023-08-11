@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Diagnostics;
+using System.IO;
 using System.Reflection;
-using IWshRuntimeLibrary; // Import the Windows Script Host COM library.
+using IWshRuntimeLibrary;
 
 namespace RobloxStudioLauncher
 {
@@ -12,32 +13,40 @@ namespace RobloxStudioLauncher
             // Replace the filename with the name of your Roblox Studio shortcut.
             string shortcutFilename = "Roblox Studio.lnk";
 
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             string exepath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-            string SP = exepath.ToString() + "/SP.exe";
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
-            // Get the path to the desktop folder.
-            string desktopFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-            // Combine the desktop folder path with the Roblox Studio shortcut filename.
-            string robloxStudioShortcutPath = System.IO.Path.Combine(desktopFolderPath, shortcutFilename);
-
-            Process proc = new Process();
-            proc.StartInfo = new ProcessStartInfo(robloxStudioShortcutPath)
+            string SP = Path.Combine(exepath, "SP.exe");
+            void StartSP()
             {
-                UseShellExecute = true
-            };
-            proc.Start();
-            Process _SP = new Process();
-            _SP.StartInfo = new ProcessStartInfo(SP)
+                Process _SP = new Process();
+                _SP.StartInfo = new ProcessStartInfo(SP)
+                {
+                    UseShellExecute = true
+                };
+                _SP.Start();
+            }
+            // Check if Roblox Studio is already running
+            if (Process.GetProcessesByName("RobloxStudioBeta").Length == 0)
             {
-                UseShellExecute = true
-            };
-            _SP.Start();
+                // Roblox Studio is not running, so launch it using the shortcut
+                string desktopFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string robloxStudioShortcutPath = Path.Combine(desktopFolderPath, shortcutFilename);
 
+                Process proc = new Process();
+                proc.StartInfo = new ProcessStartInfo(robloxStudioShortcutPath)
+                {
+                    UseShellExecute = true
+                };
+                proc.Start();
 
+                // Start SP.exe
+                StartSP();
+            }
+            else
+            {
+                Console.WriteLine("Roblox Studio is already running.\n launching Studio Prescence");
+                StartSP();
+
+            }
         }
     }
 }
