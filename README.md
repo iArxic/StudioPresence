@@ -14,12 +14,10 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 • Run it!
 
 *Additional steps for **MacOS** users*
-[details="MacOS"]
 1. Download the Mac server
 2. Extract it using the archive utility from the App Store
 3. [Open your terminal](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125) and type `chmod u+x ` and then drag the server file into your terminal, press enter and it will turn the server into an executable file.
 4. Open the executable file! (If it cannot verify for malware go to settings > Privacy and Security, scroll down until you find the warning, and press open anyway)
-[/details]
 
 
 You might have an issue with the antivirus incorrectly flagging it as a virus, click "keep" and if needed exclude the file from your antivirus.
