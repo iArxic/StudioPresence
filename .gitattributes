@@ -1,0 +1,2 @@
+*.luau linguist-language=Lua
+*.*.luau linguist-language=Lua
