@@ -33,7 +33,7 @@ If the activity doesn't show up, double check you have activity privacy enabled!
 [xhayper](https://github.com/xhayper) - v3.0.1  
 [Coyenn](https://github.com/Coyenn) - v2  
 [Rigid Studios](https://devforum.roblox.com/u/Rigid_Studios) - Original DRPC  
-[Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified) 
+[Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified)  
 [pruzae](https://devforum.roblox.com/u/pruzae) - MacOS installation guide
 
 *PS: If you're a scripter you can check out my [RoCommit](https://devforum.roblox.com/t/rocommit-git-like-webhook-logging/1886532) plugin!
