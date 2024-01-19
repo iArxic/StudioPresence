@@ -44,14 +44,17 @@ function client:login(cb)
 		repeat
 
 			if self.Enabled then
-				self:SetActivity()
+				local success, previousActivity = self:SetActivity()
+				if success then
+				script.Parent.Parent.httpClient:SetAttribute("previous",previousActivity) -- had to set it this way because it behaved weirdly using module variables
+				end
 			end
 
 			if self.Terminated then
 				break
 			end
 
-			task.wait(2.6)
+			task.wait(1) -- because previous activities now get ignored, we can make this quicker
 		until false
 	end)
 
