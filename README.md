@@ -25,7 +25,7 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 3. Drag `startup.vbs` into the folder that opens
 4. Edit `startup.vbs` with notepad
 5. Copy the path to the server exe file
-6. Replace `PATH_TO_EXE` with said path, make sure there is only one set of quotation marks
+6. Replace `PATH_TO_EXE` with said path, make sure there is only one set of quotation marks  
 This will automatically start the server without opening a window
 
 
