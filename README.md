@@ -26,7 +26,7 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 4. Edit `startup.vbs` with notepad
 5. Copy the path to the server exe file
 6. Replace `PATH_TO_EXE` with said path, make sure there is only one set of quotation marks  
-This will automatically start the server without opening a window
+This will automatically start the server without opening a command window
 
 
 You might have an issue with the antivirus incorrectly flagging it as a virus, click "keep" and if needed exclude the file from your antivirus.
