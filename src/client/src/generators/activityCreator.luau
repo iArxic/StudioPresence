@@ -17,8 +17,6 @@ function eval(item)
 end;
 
 function activityCreator:Get()
-	local savedDescription = Data:Get("Description");
-	local savedState = Data:Get("State");
 	
 	local active = StudioService.ActiveScript
 	local editing = "StudioPresence by iArxic"
@@ -36,24 +34,30 @@ function activityCreator:Get()
 		editing="Editing a CLIENT Script"
 		active="clientscript"
 	elseif active:IsA("Script") then
+		if active.RunContext~="CLIENT" then
 		editing="Editing a SERVER Script"
 		active="serverscript"
+		else
+			editing="Editing a CLIENT CONTEXT Script"
+			active="clientscript"			
+		end
 	end
 	if game:GetService("RunService"):IsRunning() then
 		editing="StudioPresence by iArxic"
 		active="studio"
-		description="Currently play-testing"
+		description="Testing"
 		smallImageKey="playtesticon"
-		smallImageDesc = "Currently play-testing"
+		smallImageDesc = "Testing"
 	end
 	Activity
 		:clear()
 		:setDescription(description)
 		:setState(FormatString:process("Workspace: $WORKSPACE"))
-		:setThumbnail(smallImageKey,smallImageDesc)
 		:setImage(active,editing)
 		:setTimer();
-	
+	if game:GetService("RunService"):IsRunning() then
+		Activity:setThumbnail(smallImageKey,smallImageDesc)
+	end
 	return Activity;
 end;
 
