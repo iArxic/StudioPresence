@@ -9,7 +9,7 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Installation
 
-• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.1) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
+• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.4) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
 • Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.1) to a new folder (Inside desktop recommended).  
 • Run it!
 
