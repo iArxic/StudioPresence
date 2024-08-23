@@ -20,9 +20,10 @@
   "scripts": {
     "build:server": "rimraf dist/server && ncc build src/server/index.ts -o dist/server",
     "dev:server": "ncc build src/server/index.ts -o dist/server -w",
-    "package:server": "rimraf release && npm run build:server && pkg .",
+    "package:server": "rimraf release && npm run build:server && pkg . && npm run package:vbs",
     "build:client": "rojo build -o release/studiopresence.rbxm",
-    "package": "npm run package:server && npm run build:client"
+    "package": "npm run package:server && npm run build:client",
+    "package:vbs": "copy-file-util src/server/startup.vbs --folder release"
   },
   "dependencies": {
     "chalk": "4.1.2",
@@ -32,6 +33,7 @@
     "@types/discord-rpc": "^4.0.3",
     "@types/node": "^18.11.18",
     "@vercel/ncc": "^0.36.0",
+    "copy-file-util": "^1.2.1",
     "pkg": "^5.8.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
