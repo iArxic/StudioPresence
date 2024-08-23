@@ -34,7 +34,7 @@ function activityCreator:Get()
 		editing="Editing a CLIENT Script"
 		active="clientscript"
 	elseif active:IsA("Script") then
-		if active.RunContext~="CLIENT" then
+		if active.RunContext~="Client" then
 		editing="Editing a SERVER Script"
 		active="serverscript"
 		else
