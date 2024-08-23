@@ -23,7 +23,9 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: StudioPresence-Windows
-          path: release/studiopresence-win*.exe
+          path: |
+            release/studiopresence-win*.exe
+            release/startup.vbs
 
       - uses: actions/upload-artifact@v3
         with:
