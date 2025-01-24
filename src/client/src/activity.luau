@@ -2,7 +2,6 @@ local activity = {}
 local startTick = os.time()
 
 function activity.new()
-	-- Please don't remove this, I need jobs... :D
 	return setmetatable({ assets = {} }, { __index = activity })
 end
 

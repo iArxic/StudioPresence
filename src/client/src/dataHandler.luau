@@ -15,7 +15,7 @@ end
 function dataHandler:Get(key)
 	local data = self.data[key]
 	if data == nil or data == "" then
-		data = self.plugin:GetSetting(key)
+		--data = self.plugin:GetSetting(key)
 
 		self.data[key] = data
 	end
