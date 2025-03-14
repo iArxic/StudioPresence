@@ -4,63 +4,78 @@ on: push
 
 jobs:
   server:
+    name: StudioPresence App
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
-      - uses: actions/setup-node@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 9.8.0
+          version: 9.10.0
 
-      - run: pnpm install --frozen-lockfile
+      - name: Install and Package Server
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm run package:server
 
-      - run: pnpm run package:server
-
-      - uses: actions/upload-artifact@v3
+      - name: Windows Release
+        uses: actions/upload-artifact@v4
         with:
           name: StudioPresence-Windows
           path: |
             release/studiopresence-win*.exe
             release/startup.vbs
 
-      - uses: actions/upload-artifact@v3
+      - name: MacOS Release
+        uses: actions/upload-artifact@v4
         with:
           name: StudioPresence-macOS
           path: release/studiopresence-macos*
 
-      - uses: actions/upload-artifact@v3
+      - name: Linux Release
+        uses: actions/upload-artifact@v4
         with:
           name: StudioPresence-Linux
           path: release/studiopresence-linux*
 
   client:
+    name: StudioPresence Plugin
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 9.8.0
+          version: 9.10.0
 
-      - uses: Roblox/setup-foreman@v1
+      - name: Setup Foreman
+        uses: Roblox/setup-foreman@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: mkdir release
+      - name: Install and Package Client
+        run: |
+          mkdir release
+          pnpm install --frozen-lockfile
+          pnpm build:client
 
-      - run: pnpm install --frozen-lockfile
-
-      - run: pnpm build:client
-
-      - uses: actions/upload-artifact@v3
+      - name: Upload plugin
+        uses: actions/upload-artifact@v4
         with:
           name: StudioPresence-Plugin
           path: release/studiopresence*.rbxm
