@@ -3,7 +3,7 @@ import http from "node:http";
 import chalk from "chalk";
 
 const SERVER_PORT = 4455;
-const CLIENT_ID = "1350117711732150272";
+const CLIENT_ID = "1028311936854675458";
 
 async function login(client: Client) {
   let user: User | undefined;
