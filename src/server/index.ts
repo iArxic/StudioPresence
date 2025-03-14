@@ -56,6 +56,7 @@ async function login(client: Client) {
             if (data.details === "Testing") {
               lastTesting = Date.now();
             } else if (Date.now() - lastTesting < 3000) {
+              // i wish i could just use a return here
               passThrough = false;
             }
             if (passThrough) {
@@ -69,19 +70,8 @@ async function login(client: Client) {
                 smallImageKey: data.assets.small_image,
               });
 
-              if (data.updateType === "CLOSE") {
-                console.log(chalk.yellow("StudioPresence is closing in 5 seconds..."));
-                setTimeout(() => {
-                  client
-                    .clearActivity()
-                    .then(() => console.log(chalk.green("Activity cleared.")))
-                    .catch(() =>
-                      console.error(chalk.red("Failed to clear activity"))
-                    );
-                  console.log(chalk.red("StudioPresence has closed."));
-                  process.exit(0);
-                }, 5000);
-              }
+              if (data.updateType === "CLOSE")
+                client.clearActivity().catch(() => null);
             }
           }
 
