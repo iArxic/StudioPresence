@@ -1,7 +1,7 @@
 -- CREDITS TO RIGID STUDIOS FOR MAKING THIS OPEN SOURCED!! THIS ISNT MY ORIGINAL SCRIPT, JUST HEAVILY EDITED!
 
 local toolbar = plugin:CreateToolbar("StudioPresence")
-local button = toolbar:CreateButton("Toggle StudioPresence panel", "StudioPresence v3.0.5", "rbxassetid://137140153706497")
+local button = toolbar:CreateButton("Toggle StudioPresence panel", "StudioPresence with a menu", "rbxassetid://137140153706497")
 
 script.Parent.src.activity:SetAttribute("started", os.time())
 local started = false
