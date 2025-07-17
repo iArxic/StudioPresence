@@ -4,7 +4,7 @@
 
 ---
 **[Link to the plugin](https://create.roblox.com/store/asset/127737507985445/StudioPresence-with-a-Menu)**
-
+**[Link to Roblox DevForum](https://devforum.roblox.com/t/studiopresence-studiodiscord-rich-presence-with-a-menu/3819961)**
 
 ## How to Use the Menu  
 *(Created by [Papgy100](https://github.com/Papgy))*
@@ -64,3 +64,8 @@ It would look something like this:
 ---
 
 **Make sure to have the Output Console open while using the plugin. It will display messages confirming whether the plugin was added successfully or if there were any errors.**
+
+---
+# Links
+**[My Roblox Profile](https://www.roblox.com/users/1509133389/profile)**
+**[My GitHub](https://github.com/Papgy)**
