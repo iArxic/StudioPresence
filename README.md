@@ -2,6 +2,10 @@
 
 **[Link to original project with instractions on how to install](https://github.com/iArxic/StudioPresence)**
 
+---
+**[Link to the plugin](https://create.roblox.com/store/asset/127737507985445/StudioPresence-with-a-Menu)**
+
+
 ## How to Use the Menu  
 *(Created by [Papgy100](https://github.com/Papgy))*
  
@@ -60,8 +64,3 @@ It would look something like this:
 ---
 
 **Make sure to have the Output Console open while using the plugin. It will display messages confirming whether the plugin was added successfully or if there were any errors.**
-
-[purn8r](https://devforum.roblox.com/u/purn8r) - Windows automatic boot guide
-
-*PS: If you're a scripter you can check out my [RoCommit](https://devforum.roblox.com/t/rocommit-git-like-webhook-logging/1886532) plugin!  
-And if you're a builder you can check out [Color Offset](https://devforum.roblox.com/t/color-offset-plugin-add-color-variations-to-your-builds/2333459) plugin!*
