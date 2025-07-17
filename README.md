@@ -65,7 +65,7 @@ Chat, TestService, HttpService, RunService, LocalizationService
 ```
 
 *If you’d like to add more locations, you can edit the `activityCreator` module script inside:  
-`src/client/src/generators/activityCreator.server.luau`.*
+`src/client/src/generators/activityCreator.luau`.*
 
 ---
 
