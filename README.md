@@ -1,6 +1,6 @@
 # StudioPresence with a menu V1.0.0
 
-**[Link to original project with instractions on how to install](https://github.com/iArxic/StudioPresence)**
+## **[Link to original project with instractions on how to install](https://github.com/iArxic/StudioPresence)**
 
 ---
 **[Link to the plugin](https://create.roblox.com/store/asset/127737507985445/StudioPresence-with-a-Menu)**
