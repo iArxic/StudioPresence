@@ -1,5 +1,4 @@
 local activity = {}
-local startTick = os.time()
 
 function activity.new()
 	return setmetatable({ assets = {} }, { __index = activity })

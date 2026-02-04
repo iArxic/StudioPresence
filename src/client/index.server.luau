@@ -1,6 +1,8 @@
 -- CREDITS TO RIGID STUDIOS FOR MAKING THIS OPEN SOURCED!! THIS ISNT MY ORIGINAL SCRIPT, JUST HEAVILY EDITED!
 
-script.Parent.src.activity:SetAttribute("started", os.time())
+local scriptParent = script.Parent
+
+scriptParent.src.activity:SetAttribute("started", os.time())
 local started = false
 
 local function start()
@@ -10,7 +12,9 @@ local function start()
 	}
 
 	for i, v in ipairs(StudioPresence:GetDescendants()) do
-		if not v:IsA("ModuleScript") then continue end
+		if not v:IsA("ModuleScript") then
+			continue
+		end
 		local m = require(v)
 		setmetatable(m, { __index = env })
 	end
