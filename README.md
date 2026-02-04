@@ -1,4 +1,4 @@
-# StudioPresence v3.0.4
+# StudioPresence v3.0.5
 
 A plugin to connect your Studio with Discord!  
 Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405)
