@@ -66,7 +66,8 @@ jobs:
       - name: Setup Foreman
         uses: Roblox/setup-foreman@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }},
+          allow-external-github-orgs: true
 
       - name: Install and Package Client
         run: |
