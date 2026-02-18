@@ -38,7 +38,11 @@ function activityCreator:Get()
 		end
 
 		-- script type -> image/label (kept from your cleaned version)
-		if activeScript:IsA("ModuleScript") then
+		if workspace.Camera:FindFirstChild("MoonAnimator2MouseFilter") then
+			editing = "Moon Animator 2"
+			description = "Animating"
+			imageKey = "MoonAnimator"
+		elseif activeScript:IsA("ModuleScript") then
 			editing = "Editing a MODULE Script"
 			imageKey = "modulescript"
 		elseif activeScript:IsA("LocalScript") then
