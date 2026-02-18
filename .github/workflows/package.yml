@@ -5,7 +5,7 @@ on: push
 jobs:
   server:
     name: StudioPresence App
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -46,11 +46,9 @@ jobs:
           name: StudioPresence-Linux
           path: release/studiopresence-linux*
 
-
   client:
     name: StudioPresence Plugin
-    runs-on: ubuntu-22.04
-
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -65,21 +63,16 @@ jobs:
         with:
           version: 9.10.0
 
-      - name: Install Foreman manually
-        run: |
-          curl -L https://github.com/Roblox/foreman/releases/latest/download/foreman-linux.zip -o foreman.zip
-          unzip foreman.zip -d foreman-bin
-          chmod +x foreman-bin/foreman
-          echo "$PWD/foreman-bin" >> $GITHUB_PATH
-
-      - name: Verify Foreman
-        run: foreman --version
+      - name: Setup Foreman
+        uses: Roblox/setup-foreman@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install and Package Client
         run: |
-          mkdir -p release
+          mkdir release
           pnpm install --frozen-lockfile
-          pnpm run build:client
+          pnpm build:client
 
       - name: Upload plugin
         uses: actions/upload-artifact@v4
