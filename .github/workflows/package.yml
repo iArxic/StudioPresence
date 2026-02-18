@@ -64,7 +64,7 @@ jobs:
           version: 9.10.0
 
       - name: Setup Foreman
-        uses: Roblox/setup-foreman@main
+        uses: Roblox/setup-foreman@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
