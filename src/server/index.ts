@@ -21,8 +21,7 @@ async function login(client: Client) {
       );
     } else {
       console.log(chalk.green("StudioPresence Started!"));
-      console.log(chalk.blue(`Logged in as ${user.username}`));
-      console.log("------------------------------");
+      console.log("");
       console.log(chalk.yellow("Do not see the activity?"));
       console.log(chalk.yellow("Check your activity privacy on Discord!"));
     }
