@@ -1,11 +1,8 @@
 local util = {}
-local StudioPresence = script:FindFirstAncestor("StudioPresence")
-
-local Data = require(StudioPresence.src.dataHandler)
 
 -- Get place (Used for name later)
 local success, place = pcall(function()
-	return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId)
+	return game:GetService("MarketplaceService"):GetProductInfoAsync(game.PlaceId)
 end)
 
 -- If offline, above fetch will have failed, remedy that by just getting the game.
@@ -24,7 +21,6 @@ local lastScript = game:GetService("StudioService").ActiveScript
 local lastLen = 0
 function util.hasChanges()
 	local s = game:GetService("StudioService").ActiveScript
-	local changes = false
 
 	if s then
 		local len = #s.Source:split("\n")
@@ -36,9 +32,9 @@ function util.hasChanges()
 		end
 
 		if tick() - lastEdit > 180 then
-			changes = false
+			-- changes = false
 		else
-			changes = true
+			-- changes = true
 		end
 	end
 

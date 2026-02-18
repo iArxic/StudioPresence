@@ -3,6 +3,7 @@ local StudioPresence = script:FindFirstAncestor("StudioPresence")
 
 local ActivityCreator = require(StudioPresence.src.generators.activityCreator)
 local Data = require(StudioPresence.src.dataHandler)
+local scriptParent = script.Parent
 
 function client.new(Http, _debug)
 	local self = setmetatable({ Http = Http, _debug = _debug }, { __index = client })
@@ -42,11 +43,10 @@ function client:login(cb)
 
 	task.spawn(function()
 		repeat
-
 			if self.Enabled then
 				local success, previousActivity = self:SetActivity()
 				if success then
-				script.Parent.Parent.httpClient:SetAttribute("previous",previousActivity) -- had to set it this way because it behaved weirdly using module variables
+					scriptParent.Parent.httpClient:SetAttribute("previous", previousActivity) -- had to set it this way because it behaved weirdly using module variables
 				end
 			end
 
