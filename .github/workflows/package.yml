@@ -63,6 +63,13 @@ jobs:
         with:
           version: 9.10.0
 
+      - name: Install Foreman manually
+        run: |
+         curl -L https://github.com/Roblox/foreman/releases/latest/download/foreman-linux-x64.zip -o foreman.zip
+         unzip foreman.zip -d foreman-bin
+         chmod +x foreman-bin/foreman
+         echo "$PWD/foreman-bin" >> $GITHUB_PATH
+
       - name: Install and Package Client
         run: |
           mkdir release
