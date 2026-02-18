@@ -33,7 +33,6 @@
     "build:server": "rimraf dist/server && ncc build src/server/index.ts -o dist/server",
     "dev:server": "ncc build src/server/index.ts -o dist/server -w",
     "package:server": "rimraf release && npm run build:server && pkg . && npm run package:vbs",
-    "build:client": "rojo build -o release/studiopresence.rbxm",
     "package": "npm run package:server && npm run build:client",
     "package:vbs": "copy-file-util src/server/startup.vbs --folder release"
   },
