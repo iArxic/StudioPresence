@@ -5,7 +5,8 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Examples
 
-![image](https://github.com/iArxic/StudioPresence/assets/77511250/d23b22c2-af73-4f40-a2e8-7e5eeb4a0ada)
+<img width="335" height="638" alt="examples" src="https://github.com/user-attachments/assets/e232ba09-89f8-4e0d-94c0-02ea84607d23" />
+
 
 # Installation
 
