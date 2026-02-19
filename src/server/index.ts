@@ -91,3 +91,8 @@ async function login(client: Client) {
     })
     .listen(SERVER_PORT);
 })();
+
+console.log("\nPress any key to exit...");
+process.stdin.setRawMode(true);
+process.stdin.resume();
+process.stdin.once("data", () => process.exit(0));
