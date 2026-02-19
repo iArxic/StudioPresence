@@ -1,4 +1,4 @@
-# StudioPresence v3.0.5
+# StudioPresence v3.0.6
 
 A plugin to connect your Studio with Discord!  
 Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405)
@@ -9,8 +9,8 @@ Heavily inspired by [DRPC by RigidStudios](https://devforum.roblox.com/t/1086405
 
 # Installation
 
-• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.4) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
-• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.1) to a new folder (Inside desktop recommended).  
+• Download [Server Here](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.6) and [Roblox Plugin Here](https://www.roblox.com/library/11213975679/StudioPresence)  
+• Next, extract the already installed [Server](https://github.com/iArxic/StudioPresence/releases/tag/v3.0.6) to a new folder (Inside desktop recommended).  
 • Run it!
 
 *Additional steps for **MacOS** users*
@@ -39,12 +39,15 @@ If the activity doesn't show up, double check you have activity privacy enabled!
 
 # Special thanks to
 
-[xhayper](https://github.com/xhayper) - v3.0.1  
 [Coyenn](https://github.com/Coyenn) - v2  
+[xhayper](https://github.com/xhayper) - v3.0.1  
 [Rigid Studios](https://devforum.roblox.com/u/Rigid_Studios) - Original DRPC  
 [Eltobb](https://devforum.roblox.com/u/Elttob) - Vanilla icons (Modified)  
 [pruzae](https://devforum.roblox.com/u/pruzae) - MacOS installation guide  
 [purn8r](https://devforum.roblox.com/u/purn8r) - Windows automatic boot guide
+[UncleTyrone](https://devforum.roblox.com/u/UncleTyrone) - v3.0.5
+[Papgy](https://devforum.roblox.com/u/Papgy) - v3.0.6
+
 
 *PS: If you're a scripter you can check out my [RoCommit](https://devforum.roblox.com/t/rocommit-git-like-webhook-logging/1886532) plugin!  
 And if you're a builder you can check out [Color Offset](https://devforum.roblox.com/t/color-offset-plugin-add-color-variations-to-your-builds/2333459) plugin!*
