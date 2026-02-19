@@ -69,7 +69,7 @@ function activityCreator:Get()
 
 	Activity:clear()
 		:setDescription(description)
-		:setState(FormatString:process("└ $WORKSPACE"))
+		:setState(FormatString:process("Workspace: $WORKSPACE"))
 		:setImage(imageKey, editing)
 		:setTimer()
 
