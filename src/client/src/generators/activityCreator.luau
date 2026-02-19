@@ -6,16 +6,37 @@ local Activity = require(StudioPresence.src.activity).new()
 local FormatString = require(StudioPresence.src.generators.formatString)
 
 function activityCreator:Get()
-	local StudioService = game:GetService("StudioService")
-	local ScriptEditorService = game:GetService("ScriptEditorService")
 	local RunService = game:GetService("RunService")
 
-	local activeScript = StudioService.ActiveScript
 	local description = "Developing"
 	local editing = "StudioPresence by iArxic"
 	local imageKey = "studio"
 	local smallImageKey, smallImageDesc = "none", "none"
 	local lineText
+
+	-- Playtesting mode - StudioService doesn't exist during playtest
+	if RunService:IsRunning() then
+		editing = "StudioPresence by iArxic"
+		description = "Testing"
+		imageKey = "studio"
+		smallImageKey = "playtesticon"
+		smallImageDesc = "Testing"
+
+		Activity:clear()
+			:setDescription(description)
+			:setState(FormatString:process("Workspace: $WORKSPACE"))
+			:setImage(imageKey, editing)
+			:setTimer()
+			:setThumbnail(smallImageKey, smallImageDesc)
+
+		return Activity
+	end
+
+	-- Studio-only services (not available during playtest)
+	local StudioService = game:GetService("StudioService")
+	local ScriptEditorService = game:GetService("ScriptEditorService")
+
+	local activeScript = StudioService.ActiveScript
 
 	if workspace.Camera:FindFirstChild("MoonAnimator2MouseFilter") then
 		editing = "Moon Animator 2"
@@ -61,23 +82,12 @@ function activityCreator:Get()
 		end
 	end
 
-	if RunService:IsRunning() then
-		editing = "StudioPresence by iArxic"
-		description = "Testing"
-		imageKey = "studio"
-		smallImageKey = "playtesticon"
-		smallImageDesc = "Testing"
-	end
-
 	Activity:clear()
 		:setDescription(description)
 		:setState(FormatString:process("Workspace: $WORKSPACE"))
 		:setImage(imageKey, editing)
 		:setTimer()
-
-	--if smallImageKey ~= "" then
-		Activity:setThumbnail(smallImageKey, smallImageDesc)
-	--end
+		:setThumbnail(smallImageKey, smallImageDesc)
 
 	return Activity
 end

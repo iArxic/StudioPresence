@@ -16,6 +16,12 @@ function util.getPlaceName()
 	return util.place.Name
 end
 
+-- Guard: Only run in Studio edit mode, not during playtesting
+local RunService = game:GetService("RunService")
+if not RunService:IsStudio() or RunService:IsRunning() then
+	return util
+end
+
 local lastEdit = tick()
 local lastScript = game:GetService("StudioService").ActiveScript
 local lastLen = 0

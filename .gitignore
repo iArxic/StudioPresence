@@ -276,3 +276,4 @@ $RECYCLE.BIN/
 
 release/
 .vscode/settings.json
+.claude/settings.json
