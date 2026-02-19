@@ -17,7 +17,13 @@ function activityCreator:Get()
 	local smallImageKey, smallImageDesc = "", ""
 	local lineText
 
-	if activeScript then
+	if workspace.Camera:FindFirstChild("MoonAnimator2MouseFilter") then
+		editing = "Moon Animator 2"
+		description = "Animating"
+		imageKey = "studio"
+		smallImageKey = "moonanimator"
+		smallImageDesc = "Animating"
+	elseif activeScript then
 		local doc = ScriptEditorService:FindScriptDocument(activeScript)
 
 		if doc then
@@ -38,11 +44,7 @@ function activityCreator:Get()
 		end
 
 		-- script type -> image/label (kept from your cleaned version)
-		if workspace.Camera:FindFirstChild("MoonAnimator2MouseFilter") then
-			editing = "Moon Animator 2"
-			description = "Animating"
-			imageKey = "MoonAnimator"
-		elseif activeScript:IsA("ModuleScript") then
+		if activeScript:IsA("ModuleScript") then
 			editing = "Editing a MODULE Script"
 			imageKey = "modulescript"
 		elseif activeScript:IsA("LocalScript") then
@@ -73,7 +75,7 @@ function activityCreator:Get()
 		:setImage(imageKey, editing)
 		:setTimer()
 
-	if RunService:IsRunning() then
+	if smallImageKey ~= "" then
 		Activity:setThumbnail(smallImageKey, smallImageDesc)
 	end
 
