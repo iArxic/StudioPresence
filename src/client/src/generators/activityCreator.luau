@@ -14,7 +14,7 @@ function activityCreator:Get()
 	local description = "Developing"
 	local editing = "StudioPresence by iArxic"
 	local imageKey = "studio"
-	local smallImageKey, smallImageDesc = "", ""
+	local smallImageKey, smallImageDesc = "none", "none"
 	local lineText
 
 	if workspace.Camera:FindFirstChild("MoonAnimator2MouseFilter") then
@@ -75,9 +75,9 @@ function activityCreator:Get()
 		:setImage(imageKey, editing)
 		:setTimer()
 
-	if smallImageKey ~= "" then
+	--if smallImageKey ~= "" then
 		Activity:setThumbnail(smallImageKey, smallImageDesc)
-	end
+	--end
 
 	return Activity
 end
