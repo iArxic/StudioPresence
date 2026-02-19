@@ -275,3 +275,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,vim,git,macos,windows,yarn
 
 release/
+.vscode/settings.json
+.claude/settings.json

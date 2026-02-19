@@ -2,6 +2,22 @@ import { Client, type User } from "discord-rpc";
 import http from "node:http";
 import chalk from "chalk";
 
+process.on("uncaughtException", (err) => {
+  console.error(chalk.red("CRASHED:"), err);
+  console.log("\nPress any key to exit...");
+  process.stdin.setRawMode(true);
+  process.stdin.resume();
+  process.stdin.once("data", () => process.exit(1));
+});
+
+process.on("unhandledRejection", (reason) => {
+  console.error(chalk.red("PROMISE REJECTED:"), reason);
+  console.log("\nPress any key to exit...");
+  process.stdin.setRawMode(true);
+  process.stdin.resume();
+  process.stdin.once("data", () => process.exit(1));
+});
+
 const SERVER_PORT = 4455;
 const CLIENT_ID = "1028311936854675458";
 
@@ -20,7 +36,10 @@ async function login(client: Client) {
         chalk.red("StudioPresence failed to start (Is Discord open?)")
       );
     } else {
-      console.log(chalk.green("StudioPresence started"));
+      console.log(chalk.green("StudioPresence Started!"));
+      console.log("");
+      console.log(chalk.yellow("Do not see the activity?"));
+      console.log(chalk.yellow("Check your activity privacy on Discord!"));
     }
   }
 }

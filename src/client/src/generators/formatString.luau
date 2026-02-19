@@ -4,7 +4,17 @@ local StudioPresence = script:FindFirstAncestor("StudioPresence")
 local Util = require(StudioPresence.src.util)
 local StudioService = game:GetService("StudioService")
 
-local Variables = {
+function formatString:process(str)
+	for identifier, value in pairs(Variables) do
+		str = str:gsub(string.gsub(identifier, "<>", "(.*)"), function(...)
+			return value.Obtain(StudioService.ActiveScript, ...)
+		end)
+	end
+
+	return str
+end
+
+Variables = {
 	["%$SCRIPT_NAME"] = {
 		Description = "Name of the current script",
 		Obtain = function(src)
@@ -59,15 +69,5 @@ local Variables = {
 		end,
 	},
 }
-
-function formatString:process(str)
-	for identifier, value in pairs(Variables) do
-		str = str:gsub(string.gsub(identifier, "<>", "(.*)"), function(...)
-			return value.Obtain(StudioService.ActiveScript, ...)
-		end)
-	end
-
-	return str
-end
 
 return formatString
