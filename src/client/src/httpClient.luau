@@ -29,7 +29,7 @@ function httpClient:Post(requestBody)
 		end
 	end
 
-	if success then
+	if success and requestBody.updateType~="CLOSE" then
 		reply = requestBody.activity.details
 	end
 	return success, reply

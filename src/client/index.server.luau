@@ -32,7 +32,8 @@ local function start()
 			ClientObj:Close()
 		end
 	end)
-
+	
+	if not plugin then return end
 	plugin.Unloading:Connect(function()
 		ClientObj.Enabled = false
 		ClientObj.Terminated = true
